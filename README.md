@@ -1,4 +1,4 @@
-# Algorithms Class Java
+# Algorithms Class Java Implementation
 
 A very basic replication, in Java, of what was discussed in Algorithms class
 
