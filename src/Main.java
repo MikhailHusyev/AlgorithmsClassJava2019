@@ -4,13 +4,13 @@ public class Main {
 
     public  static void  main(String args[]){
 
-        Integer[] dataSetMergeSort = new Integer[]{1,2,3,2,6,12,13};
+        Integer[] dataSetMergeSort = new Integer[]{1,2,3,2,6,12,13,10};
 
 
-        MergeSort mergeSort = new MergeSort();
-        mergeSort.sort(dataSetMergeSort, 0, 2, 6);
+        ArraySorter sort = new MergeSort();
+        sort.sort(dataSetMergeSort);
 
-        System.out.println("Insertion Sort: ");
+        System.out.println("Merge Sort: ");
         printValues(dataSetMergeSort);
     }
 

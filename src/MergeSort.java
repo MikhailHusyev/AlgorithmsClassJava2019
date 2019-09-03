@@ -1,6 +1,22 @@
-public class MergeSort{
+public class MergeSort implements ArraySorter{
 
-    public <T extends Comparable> void sort(T[] set, int p, int q, int r) {
+    public <T extends Comparable>void sort(T[] set){
+        mergeSort(set, 0, set.length-1);
+    }
+
+    private <T extends  Comparable>void mergeSort(T[] set, int p, int r){
+
+        if(p < r){
+            int q = (p + r)/2;
+
+            mergeSort(set, p, q);
+            mergeSort(set, q + 1, r);
+
+            merge(set, p,q,r);
+        }
+    }
+
+    private  <T extends Comparable> void merge(T[] set, int p, int q, int r) {
 
         int n1 = q - p+1;
         int n2 = r - q;
@@ -30,7 +46,6 @@ public class MergeSort{
             }
             k++;
         }
-
 
     }
 }
