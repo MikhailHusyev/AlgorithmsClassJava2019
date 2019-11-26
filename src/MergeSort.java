@@ -4,19 +4,19 @@ public class MergeSort implements ArraySorter{
         mergeSort(set, 0, set.length-1);
     }
 
-    private <T extends  Comparable>void mergeSort(T[] set, int p, int r){
+    private <T extends  Comparable>void mergeSort(T[] A, int p, int r){
 
         if(p < r){
-            int q = (p + r)/2;
+            int q = (int)(Math.floor((p + r)/2.0));
 
-            mergeSort(set, p, q);
-            mergeSort(set, q + 1, r);
+            mergeSort(A, p, q);
+            mergeSort(A, q + 1, r);
 
-            merge(set, p,q,r);
+            merge(A, p,q,r);
         }
     }
 
-    private  <T extends Comparable> void merge(T[] set, int p, int q, int r) {
+    private  <T extends Comparable> void merge(T[] A, int p, int q, int r) {
 
         int n1 = q - p+1;
         int n2 = r - q;
@@ -24,24 +24,23 @@ public class MergeSort implements ArraySorter{
         Comparable[] L = new Comparable[n1+1];
         Comparable[] R = new Comparable[n2+1];
 
-        for (int i = 0; i < n1; i++) L[i] = set[p + i];
+        for (int i = 0; i < n1; i++) L[i] = A[p + i-1];
 
-        for (int i = 0; i < n2; i++) R[i] = set[q + i +1];
+        for (int i = 0; i < n2; i++) R[i] = A[q + i];
 
         L[n1] = null;
         R[n2] = null;
 
-        int i = 0;
-        int j = 0;
-        int k = 0;
+        int i = 1;
+        int j = 1;
+        int k = p;
 
-        while(i < n1 && j < n2){
-
-            if(L[i].equals(R[j]) || L[i].compareTo(R[j]) < 0){
-                set[k] = (T)L[i];
+        while(k <= r){
+            if (L[i-1].equals(R[j-1]) || L[i-1].compareTo(R[j-1]) < 0) {
+                A[k] = (T) L[i-1];
                 i++;
-            }else{
-                set[k] = (T)R[j];
+            } else{
+                A[k] = (T) R[j-1];
                 j++;
             }
             k++;
