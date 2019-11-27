@@ -5,10 +5,14 @@ Analysis:
 
  */
 
-public class InsertionSort implements ArraySorter{
+public class InsertionSort{
 
-    @Override
-    public <T extends Comparable> void sort(T[] set) {
+    /*
+    Insertion sort method implementation
+
+    <T> is a generic term.  Meaning that any data can be passed in to be sorted.
+     */
+    public <T extends Comparable> void insertionSort(T[] set) {
         for(int j = 1; j < set.length; j++){
 
             T key = set[j];
