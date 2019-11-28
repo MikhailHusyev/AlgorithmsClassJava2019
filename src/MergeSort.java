@@ -4,6 +4,9 @@ public class MergeSort implements ArraySorter{
         mergeSort(set, 0, set.length-1);
     }
 
+    /*
+     Merge sort method.
+     */
     private <T extends  Comparable>void mergeSort(T[] A, int p, int r){
 
         if(p < r){
