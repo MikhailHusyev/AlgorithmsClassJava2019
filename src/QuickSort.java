@@ -22,7 +22,6 @@ public class QuickSort {
                 A[i] = A[j];
                 A[j] = swap;
             }
-
         }
         Comparable swap = A[i+1];
         A[i+1] = A[r];

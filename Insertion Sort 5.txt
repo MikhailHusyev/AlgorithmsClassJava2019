@@ -1,0 +1,9 @@
+Insertion Sort Size Of: 5
+Start Time Seconds: 1203725.8436423
+End Time Seconds: 1203725.8436538
+Run Time Seconds: 1.1499971151351929E-5
+65187
+83317
+90516
+91506
+93423
