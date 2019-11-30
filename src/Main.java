@@ -4,10 +4,10 @@ public class Main {
 
     public  static void  main(String args[]){
 
-        Integer[] dataSetMergeSort = new Integer[]{1,2,3,2,6,12,13,5006,300};
+        Integer[] dataSetMergeSort = new Integer[]{1,25 ,3,2,6,12,13,500, 3, 200, 40, 1, 3, 2};
         String[] dataSetStringMerge = new String[]{"Mike", "Vlad", "Andriy", "John", "Bob", "Victor", "Chad", "Me", "You"};
-        HeapSort sorter = new HeapSort();
-        sorter.heapSort(dataSetMergeSort);
+        QuickSort sorter = new QuickSort();
+        sorter.quick(dataSetMergeSort);
         System.out.println("Sort: ");
         printValues(dataSetMergeSort);
     }
