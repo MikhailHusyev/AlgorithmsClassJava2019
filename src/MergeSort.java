@@ -21,29 +21,32 @@ public class MergeSort implements ArraySorter{
 
     private  <T extends Comparable> void merge(T[] A, int p, int q, int r) {
 
-        int n1 = q - p+1;
+        int n1 = q - p +1;
         int n2 = r - q;
 
-        Comparable[] L = new Comparable[n1+1];
-        Comparable[] R = new Comparable[n2+1];
+        Comparable[] L = new Comparable[n1];
+        Comparable[] R = new Comparable[n2];
 
-        for (int i = 0; i < n1; i++) L[i] = A[p + i-1];
+        for (int i = 0; i < n1; i++) L[i] = A[p + i];
 
-        for (int i = 0; i < n2; i++) R[i] = A[q + i];
+        for (int i = 0; i < n2; i++) R[i] = A[q + i+1];
 
-        L[n1] = null;
-        R[n2] = null;
-
-        int i = 1;
-        int j = 1;
+        int i = 0;
+        int j = 0;
         int k = p;
 
         while(k <= r){
-            if (L[i-1].equals(R[j-1]) || L[i-1].compareTo(R[j-1]) < 0) {
-                A[k] = (T) L[i-1];
+            if (i > n1-1) {
+                A[k] = (T) R[j];
+                j++;
+            } else if(j > n2-1){
+                A[k] = (T) L[i];
                 i++;
-            } else{
-                A[k] = (T) R[j-1];
+            }else if(L[i].compareTo(R[j]) < 0 || L[i].equals(R[j])){
+                A[k] = (T) L[i];
+                i++;
+            }else{
+                A[k] = (T)R[j];
                 j++;
             }
             k++;
